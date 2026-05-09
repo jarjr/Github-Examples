@@ -1,5 +1,6 @@
 name: 2minutes workflow
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/2 * * * *'
 
