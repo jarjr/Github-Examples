@@ -19,4 +19,4 @@ jobs:
           echo "MY_VAL=hello" >> $GITHUB_ENV
       - name: Step 2
         run: |
-          echo $GITHUB_ENV
+          echo $MY_VAL
