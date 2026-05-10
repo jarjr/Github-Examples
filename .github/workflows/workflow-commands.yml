@@ -6,7 +6,7 @@ on:
 
 jobs:
   my-job:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: group log messages
         run: |
