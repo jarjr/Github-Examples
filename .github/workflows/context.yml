@@ -5,7 +5,7 @@ on:
 
 jobs:
   my-context:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: "My Step" 
         run: echo "Hello $MYACTION "
