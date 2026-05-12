@@ -5,12 +5,13 @@ on:
     branches:
       - main
 
-defaults: &defaults
-  runs-on: ubuntu-latest
+x-anchors:
+  defaults: &defaults
+    runs-on: ubuntu-latest
 
-common_steps: &co_step
-  - name: Checkout code
-    uses: actions/checkout@v4
+  common_steps: &co_step
+    - name: Checkout code
+      uses: actions/checkout@v4
 
 jobs:
   deploy:
