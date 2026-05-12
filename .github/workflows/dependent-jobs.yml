@@ -5,33 +5,28 @@ on:
     branches:
       - main
 
-x-anchors:
-  defaults: &defaults
-    runs-on: ubuntu-latest
-
-  common_steps: &co_step
-    - name: Checkout code
-      uses: actions/checkout@v4
-
 jobs:
   deploy:
     needs: [build, test]
-    <<: *defaults
+    runs-on: ubuntu-latest
     steps:
-      - <<: *co_step
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Deploy application
         run: echo "Deploying to production..."
   build:
     runs-on: ubuntu-latest
     steps:
-      - <<: *co_step
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Build application
         run: echo "Building the application..."
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - <<: *co_step
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Test application
         run: echo "Running tests..."
   log:
@@ -39,6 +34,5 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      - <<: *co_step
       - name: Logging message for CI/CD
         run: echo "Showing messages now..."        
