@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "My Step" 
-        run: echo "Hello $MYACTION "
+        run: |
+          echo "ACTION: $MYACTION "
+          echo "Ator: $MY_ACTOR "
         env:
           MYACTION: ${{github.action}}
+          MY_ACTOR: ${{github.actor}}
